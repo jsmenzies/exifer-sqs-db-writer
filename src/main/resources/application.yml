@@ -1,0 +1,15 @@
+server:
+  port:
+
+cloud:
+  aws:
+    credentials:
+      profile-name:
+    region:
+      static:
+    sqs:
+      endpoint:
+      listener:
+        back-off-time:
+        wait-timeout:
+        max-number-of-messages:

@@ -1,0 +1,35 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'io.menzies'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'io.awspring.cloud:spring-cloud-starter-aws-messaging:2.3.2'
+
+    implementation 'com.amazonaws:aws-java-sdk-sqs:1.12.138'
+}
+
+test {
+    useJUnitPlatform()
+}
